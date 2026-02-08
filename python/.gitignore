@@ -1,0 +1,17 @@
+# Compiled files
+*.py[oc]
+
+# Python cache directories
+__pycache__
+
+# Virtual environmens
+.venv
+.env
+venv
+env
+
+# Pytest
+.pytest_cache/
+
+# Ruff
+.ruff_cache
