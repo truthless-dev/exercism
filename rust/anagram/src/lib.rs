@@ -11,7 +11,7 @@ fn count_graphemes(s: &str) -> HashMap<String, u32> {
 }
 
 pub fn anagrams_for<'a>(word: &str, possible_anagrams: &[&'a str]) -> HashSet<&'a str> {
-    let word_counts = count_graphemes(&word);
+    let word_counts = count_graphemes(word);
     possible_anagrams
         .iter()
         .filter(|s| {
