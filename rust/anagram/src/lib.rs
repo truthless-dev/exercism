@@ -15,7 +15,7 @@ pub fn anagrams_for<'a>(word: &str, possible_anagrams: &[&'a str]) -> HashSet<&'
     possible_anagrams
         .iter()
         .filter(|s| {
-            if (**s).to_lowercase() == word.to_lowercase() {
+            if s.to_lowercase() == word.to_lowercase() {
                 return false;
             }
             let possible_counts = count_graphemes(s);
