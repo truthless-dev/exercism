@@ -11,16 +11,16 @@ pub fn raindrops(n: u32) -> String {
         return n.to_string();
     }
 
-    let mut sounds: Vec<&str> = Vec::with_capacity(3);
+    let mut sounds = String::new();
     if multiple_of_three {
-        sounds.push(PLING);
+        sounds.push_str(PLING);
     }
     if multiple_of_five {
-        sounds.push(PLANG);
+        sounds.push_str(PLANG);
     }
     if multiple_of_seven {
-        sounds.push(PLONG);
+        sounds.push_str(PLONG);
     }
 
-    sounds.join("")
+    sounds
 }
