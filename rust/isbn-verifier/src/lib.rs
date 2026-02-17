@@ -29,5 +29,5 @@ pub fn is_valid_isbn(isbn: &str) -> bool {
         total += n * (i as u32 + 1)
     }
 
-    total % 11 == 0
+    total.is_multiple_of(11)
 }
