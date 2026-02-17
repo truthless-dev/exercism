@@ -14,7 +14,7 @@ pub fn abbreviate(phrase: &str) -> String {
         let mut iter_chars = word.chars();
 
         // Find the word's first alphabetic character.
-        while let Some(c) = iter_chars.next() {
+        for c in iter_chars.by_ref() {
             if c.is_alphabetic() {
                 c.to_uppercase().for_each(|c| acronym.push(c));
                 break;
