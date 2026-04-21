@@ -1,0 +1,173 @@
+# Bird Watcher
+
+Welcome to Bird Watcher on Exercism's Swift Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+If you get stuck on the exercise, check out `HINTS.md`, but try and solve it without using those first :)
+
+## Introduction
+
+Looping is a fundamental concept in programming that allows you to execute a block of code multiple times.
+In Swift, there are two types of loops: [`for-in` loops][for-loops] and `while` loops. 
+In this chapter, you'll learn about `for-in` loops.
+
+For loops allows you to iterate over a sequence of values, taking each element in turn, binding it to a variable of your choosing.
+Swift allows you to iterate over a variety of sequences, such as ranges, arrays, and strings (and more types which will be covered later).
+When every element of the sequence has been iterated over, the loop exits.
+
+For loops are declared by using the `for` keyword, followed by a variable name, the `in` keyword, and a sequence of values to iterate over.
+The variable given in the `for-in` loop is immutable, meaning you can't change its value inside the loop.
+Here's an example of a `for-in` loop that iterates over an array of numbers:
+
+```swift
+let numbers = [3, 10, 7, 11]
+
+for number in numbers {
+  print(number)
+}
+print("Done with numbers")
+
+// prints:
+// 3
+// 10
+// 7
+// 11
+// Done with numbers
+```
+
+~~~~exercism/note
+The `number` variable is declared in the `for-in` loop and is only available within the loop's scope.
+
+```swift
+let numbers = [3, 10, 7, 11]
+
+for number in numbers {
+    number + 1
+}
+number + 1
+// Error: Use of unresolved identifier 'number'
+```
+~~~~
+
+## Iterating over a range
+
+You can also iterate over a range of numbers using a `for-in` loop.
+This allows you to execute a block of code a specific number of times, for example, the range `1...5` will iterate over the numbers 1, 2, 3, 4, and 5, so the loop will execute 5 times.
+Sometimes you might want to iterate over indexes, in a data-structure like an array, then you can use a `0..<array.count` range.
+
+```swift
+let numbers = [3, 10, 7, 11]
+
+for i in 0..<numbers.count {
+  print(numbers[i])
+}
+
+// prints:
+// 3
+// 10
+// 7
+// 11
+```
+
+## Iterating over a string
+
+You can also iterate over a string using a `for-in` loop.
+This allows you to iterate over each character in the string, and note specifically that the type given in the loop is a `Character`.
+
+```swift
+let message = "Hello!"
+
+for character in message {
+  print(character)
+}
+
+// prints:
+// H
+// e
+// l
+// l
+// o
+// !
+```
+
+## stride
+
+Swift also provides a `stride` function that allows you to create a sequence over a range with a specific step.
+Which can be then iterated over using a `for-in` loop.
+`stride` is defined as [`stride(from:to:by:)`][stride-to] or [`stride(from:through:by:)`][stride-through], the first one is exclusive and the second one is inclusive.
+
+```swift
+for i in stride(from: 0, to: 10, by: 2) {
+  print(i)
+}
+
+// prints:
+// 0
+// 2
+// 4
+// 6
+// 8
+```
+
+Note that the `to` parameter is exclusive, so the loop will iterate until the number before the `to` parameter, while the `through` parameter is inclusive, so in this case it would also include the `10`.
+
+[stride-to]: https://developer.apple.com/documentation/swift/stride(from:to:by:)
+[stride-through]: https://developer.apple.com/documentation/swift/stride(from:through:by:)
+[for-loops]: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/controlflow/#For-In-Loops
+
+## Instructions
+
+You are an avid bird watcher that keeps track of how many birds have visited your garden.
+Usually you use a tally in a notebook to count the birds, but to better work with your data, you've digitalized the bird counts for the past weeks.
+
+## 1. Determine the total number of birds that you counted so far
+
+Let us start analyzing the data by getting a high level view.
+Find out how many birds you counted in total since you started your logs.
+
+Implement a function `totalBirdCount` that accepts an array of `Int`s that contains the bird count per day.
+It should return the total number of birds that you counted.
+
+```swift
+let birdsPerDay = [2, 5, 0, 7, 4, 1, 3, 0, 2, 5, 0, 1, 3, 1]
+totalBirdCount(birdsPerDay)
+// Returns 34
+```
+
+## 2. Calculate the number of visiting birds in a specific week
+
+Now that you got a general feel for your bird count numbers, you want to make a more fine-grained analysis.
+
+Implement a function `birdsInWeek` that accepts an array of bird counts per day and a week number.
+
+It returns the total number of birds that you counted in that specific week.
+You can assume weeks are always tracked completely.
+
+```swift
+let birdsPerDay = [2, 5, 0, 7, 4, 1, 3, 0, 2, 5, 0, 1, 3, 1]
+birdsInWeek(birdsPerDay, weekNumber: 2)
+// Returns 12
+```
+
+## 3. Fix a counting mistake
+
+You realized that all the time you were trying to keep track of the birds, there was one bird that was hiding in a far corner of the garden.
+
+You figured out that this bird always spent every second day in your garden.
+
+You do not know exactly where it was in between those days but definitely not in your garden.
+
+Your bird watcher intuition also tells you that the bird was in your garden on the first day that you tracked in your list.
+
+Given this new information, write a function `fixBirdCountLog` that takes an array of birds counted per day as an argument and returns the array after correcting the counting mistake.
+
+```swift
+var birdsPerDay = [2, 5, 0, 7, 4, 1]
+fixBirdCountLog(birdsPerDay)
+// Returns [3, 5, 1, 7, 5, 1]
+```
+
+## Source
+
+### Created by
+
+- @meatball133
