@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "wneumann"
+  ],
+  "contributors": [
+    "meatball133"
+  ],
+  "files": {
+    "solution": [
+      "Sources/WindowingSystem/WindowingSystem.swift"
+    ],
+    "test": [
+      "Tests/WindowingSystemTests/WindowingSystemTests.swift"
+    ],
+    "exemplar": [
+      ".meta/Sources/WindowingSystem/WindowingSystemExemplar.swift"
+    ]
+  },
+  "blurb": "Learn about structs and classes by simulating a windowing based computer system."
+}
