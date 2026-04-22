@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "wneumann"
+  ],
+  "contributors": [
+    "meatball133"
+  ],
+  "files": {
+    "solution": [
+      "Sources/PoetryClub/PoetryClub.swift"
+    ],
+    "test": [
+      "Tests/PoetryClubTests/PoetryClubTests.swift"
+    ],
+    "exemplar": [
+      ".meta/Sources/PoetryClub/PoetryClubExemplar.swift"
+    ]
+  },
+  "forked_from": [
+    "javascript/poetry-club-door-policy"
+  ],
+  "blurb": "Learn about strings using poems to get into your local poetry club."
+}
