@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "wneumann"
+  ],
+  "files": {
+    "solution": [
+      "Sources/BombDefuser/BombDefuser.swift"
+    ],
+    "test": [
+      "Tests/BombDefuserTests/BombDefuserTests.swift"
+    ],
+    "exemplar": [
+      ".meta/Sources/BombDefuser/BombDefuserExemplar.swift"
+    ]
+  },
+  "blurb": "Learn about closures by preventing a bomb from exploding at the Governor's ball."
+}
