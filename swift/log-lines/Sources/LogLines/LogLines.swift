@@ -8,8 +8,12 @@ enum LogLevel: String {
   case unknown
 
   init(_ line: String) {
-    let start = line.index(line.startIndex, offsetBy: 1)
-    let end = line.index(line.startIndex, offsetBy: 3)
+    let start = line.index(line.startIndex, offsetBy: 1, limitedBy: line.endIndex)
+    let end = line.index(line.startIndex, offsetBy: 3, limitedBy: line.endIndex)
+    guard let start = start, let end = end else {
+      self = .unknown
+      return
+    }
     let sub = line[start...end]
     let value = String(sub)
     self = Self.init(rawValue: value) ?? .unknown
