@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "wneumann"
+  ],
+  "files": {
+    "solution": [
+      "Sources/LogLines/LogLines.swift"
+    ],
+    "test": [
+      "Tests/LogLinesTests/LogLinesTests.swift"
+    ],
+    "exemplar": [
+      ".meta/Sources/LogLines/LogLinesExemplar.swift"
+    ]
+  },
+  "forked_from": [
+    "csharp/logs-logs-logs"
+  ],
+  "icon": "logs-logs-logs",
+  "blurb": "Learn about strings by parsing application logs"
+}
