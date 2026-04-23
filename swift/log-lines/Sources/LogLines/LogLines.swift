@@ -16,23 +16,16 @@ enum LogLevel: String {
   }
 
   func shortFormat(message: String) -> String {
-    var number: Int
-    switch self {
-    case .trace:
-      number = 0
-    case .debug:
-      number = 1
-    case .info:
-      number = 4
-    case .warning:
-      number = 5
-    case .error:
-      number = 6
-    case .fatal:
-      number = 7
-    default:
-      number = 42
-    }
+    let number =
+      switch self {
+      case .trace: 0
+      case .debug: 1
+      case .info: 4
+      case .warning: 5
+      case .error: 6
+      case .fatal: 7
+      default: 42
+      }
     return "\(number):\(message)"
   }
 }
