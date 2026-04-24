@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.build/master.swiftdeps"
+  },
+  "/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.derived/runner.swift": {
+    "dependencies": "/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.build/runner.d",
+    "object": "/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.build/runner.swift.o",
+    "swiftmodule": "/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.build/runner.swiftdeps"
+  }
+}

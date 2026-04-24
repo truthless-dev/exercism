@@ -1,0 +1,4 @@
+module DndCharacterPackageTests {
+    header "/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.build/DndCharacterPackageTests-Swift.h"
+    requires objc
+}

@@ -1,0 +1,112 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "DndCharacter-arm64-apple-macosx16.0-debug.module": ["<DndCharacter-arm64-apple-macosx16.0-debug.module>"]
+  "DndCharacterPackageTests-arm64-apple-macosx16.0-debug.module": ["<DndCharacterPackageTests-arm64-apple-macosx16.0-debug.module>"]
+  "DndCharacterPackageTests-arm64-apple-macosx16.0-debug.test": ["<DndCharacterPackageTests-arm64-apple-macosx16.0-debug.test>"]
+  "DndCharacterTests-arm64-apple-macosx16.0-debug.module": ["<DndCharacterTests-arm64-apple-macosx16.0-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<DndCharacter-arm64-apple-macosx16.0-debug.module>"]
+  "test": ["<DndCharacter-arm64-apple-macosx16.0-debug.module>","<DndCharacterPackageTests-arm64-apple-macosx16.0-debug.test>","<DndCharacterTests-arm64-apple-macosx16.0-debug.module>"]
+default: "main"
+nodes:
+  "/Users/tc/Exercism/swift/dnd-character/Sources/DndCharacter/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/tc/Exercism/swift/dnd-character/Tests/DndCharacterTests/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacter.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/tc/Exercism/swift/dnd-character/Sources/DndCharacter/DndCharacter.swift"]
+    outputs: ["/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacter.build/sources"]
+    description: "Write auxiliary file /Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacter.build/sources"
+
+  "/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.derived/runner.swift"]
+    outputs: ["/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.build/sources"]
+    description: "Write auxiliary file /Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.build/sources"
+
+  "/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.derived/runner.swift":
+    tool: test-entry-point-tool
+    inputs: []
+    outputs: ["/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.derived/runner.swift"]
+
+  "/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacter.build/DndCharacter.swift.o","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.build/runner.swift.o","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterTests.build/DndCharacterTests.swift.o"]
+    outputs: ["/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.product/Objects.LinkFileList"
+
+  "/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/tc/Exercism/swift/dnd-character/Tests/DndCharacterTests/DndCharacterTests.swift"]
+    outputs: ["/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterTests.build/sources"]
+    description: "Write auxiliary file /Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterTests.build/sources"
+
+  "/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"]
+    outputs: ["/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+
+  "<DndCharacter-arm64-apple-macosx16.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacter.build/DndCharacter.swift.o","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/Modules/DndCharacter.swiftmodule"]
+    outputs: ["<DndCharacter-arm64-apple-macosx16.0-debug.module>"]
+
+  "<DndCharacterPackageTests-arm64-apple-macosx16.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.build/runner.swift.o","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/Modules/DndCharacterPackageTests.swiftmodule"]
+    outputs: ["<DndCharacterPackageTests-arm64-apple-macosx16.0-debug.module>"]
+
+  "<DndCharacterPackageTests-arm64-apple-macosx16.0-debug.test>":
+    tool: phony
+    inputs: ["/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.xctest/Contents/MacOS/DndCharacterPackageTests"]
+    outputs: ["<DndCharacterPackageTests-arm64-apple-macosx16.0-debug.test>"]
+
+  "<DndCharacterTests-arm64-apple-macosx16.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterTests.build/DndCharacterTests.swift.o","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/Modules/DndCharacterTests.swiftmodule"]
+    outputs: ["<DndCharacterTests-arm64-apple-macosx16.0-debug.module>"]
+
+  "C.DndCharacter-arm64-apple-macosx16.0-debug.module":
+    tool: shell
+    inputs: ["/Users/tc/Exercism/swift/dnd-character/Sources/DndCharacter/DndCharacter.swift","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacter.build/sources"]
+    outputs: ["/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacter.build/DndCharacter.swift.o","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/Modules/DndCharacter.swiftmodule"]
+    description: "Compiling Swift Module 'DndCharacter' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","DndCharacter","-emit-dependencies","-emit-module","-emit-module-path","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/Modules/DndCharacter.swiftmodule","-output-file-map","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacter.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacter.build/sources","-I","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx10.13","-enable-batch-mode","-index-store-path","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j12","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacter.build/DndCharacter-Swift.h","-color-diagnostics","-swift-version","6","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","dnd_character"]
+
+  "C.DndCharacterPackageTests-arm64-apple-macosx16.0-debug.module":
+    tool: shell
+    inputs: ["/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.derived/runner.swift","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/Modules/DndCharacterTests.swiftmodule","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.build/sources"]
+    outputs: ["/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.build/runner.swift.o","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/Modules/DndCharacterPackageTests.swiftmodule"]
+    description: "Compiling Swift Module 'DndCharacterPackageTests' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","DndCharacterPackageTests","-emit-dependencies","-emit-module","-emit-module-path","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/Modules/DndCharacterPackageTests.swiftmodule","-output-file-map","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.build/sources","-I","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx10.13","-enable-batch-mode","-index-store-path","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j12","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.build/DndCharacterPackageTests-Swift.h","-color-diagnostics","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","dnd_character"]
+
+  "C.DndCharacterPackageTests-arm64-apple-macosx16.0-debug.test":
+    tool: shell
+    inputs: ["/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacter.build/DndCharacter.swift.o","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.build/runner.swift.o","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterTests.build/DndCharacterTests.swift.o","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.product/Objects.LinkFileList"]
+    outputs: ["/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.xctest/Contents/MacOS/DndCharacterPackageTests"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/DndCharacterPackageTests.xctest/Contents/MacOS/DndCharacterPackageTests"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug","-o","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.xctest/Contents/MacOS/DndCharacterPackageTests","-module-name","DndCharacterPackageTests","-Xlinker","-no_warn_duplicate_libraries","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterPackageTests.product/Objects.LinkFileList","-target","arm64-apple-macosx13.0","-Xlinker","-add_ast_path","-Xlinker","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/Modules/DndCharacter.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/Modules/DndCharacterPackageTests.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/Modules/DndCharacterTests.swiftmodule","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g"]
+
+  "C.DndCharacterTests-arm64-apple-macosx16.0-debug.module":
+    tool: shell
+    inputs: ["/Users/tc/Exercism/swift/dnd-character/Tests/DndCharacterTests/DndCharacterTests.swift","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/Modules/DndCharacter.swiftmodule","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterTests.build/sources"]
+    outputs: ["/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterTests.build/DndCharacterTests.swift.o","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/Modules/DndCharacterTests.swiftmodule"]
+    description: "Compiling Swift Module 'DndCharacterTests' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","DndCharacterTests","-emit-dependencies","-emit-module","-emit-module-path","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/Modules/DndCharacterTests.swiftmodule","-output-file-map","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacterTests.build/sources","-I","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx13.0","-enable-batch-mode","-index-store-path","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j12","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-color-diagnostics","-swift-version","6","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","dnd_character"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/tc/Exercism/swift/dnd-character/Sources/DndCharacter/","/Users/tc/Exercism/swift/dnd-character/Tests/DndCharacterTests/","/Users/tc/Exercism/swift/dnd-character/Package.swift","/Users/tc/Exercism/swift/dnd-character/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
