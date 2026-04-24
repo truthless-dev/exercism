@@ -1,4 +1,0 @@
-module DndCharacter {
-    header "/Users/tc/Exercism/swift/dnd-character/.build/arm64-apple-macosx/debug/DndCharacter.build/DndCharacter-Swift.h"
-    requires objc
-}
